@@ -1,0 +1,9 @@
+{% extends 'blogs/base.html' %}
+ 
+{% block section %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.text }}</p>
+ 
+  <p><a href='{% url 'edit' post.pk %}'>+ Обновить запись</a></p>
+  <p><a href="{% url 'delete' post.pk %}">+ Удалить пост</a></p>
+{% endblock section %}

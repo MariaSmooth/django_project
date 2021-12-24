@@ -1,0 +1,14 @@
+{% extends 'blogs/base.html' %}
+
+{% block section %}
+<h1>Мои посты</h1>
+{% for show in posts_list %}
+{% if request.user.username %}
+<p><a href="{% url 'detail' show.pk %}">{{show.title}}</a></p>
+<p><a href="{% url 'detail' show.pk %}">{{show.author}}</a></p>
+{% else %}
+
+{% endif %}
+{% endfor%}
+
+{% endblock section %}

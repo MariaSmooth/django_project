@@ -1,0 +1,15 @@
+{% extends 'blogs/base.html' %}
+
+{% block section %}
+<h1>Главная страница</h1>
+{% for post in all_posts_list %}
+{% if post.moder %}
+<p>{{ post.title }}<span>({{post.author}})</span></p>
+<p>{{ post.text }}</p>
+<img src="{{ MEDIA_URL }}{{ all_posts_list.img.url }}" alt="posts image">
+<p>{{ post.create }}</p>
+<p>{{ post.update }}</p>
+{% else %}
+{% endif %}
+{% endfor %}
+{% endblock section %}
